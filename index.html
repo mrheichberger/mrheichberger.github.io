@@ -1,10 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Marinna Heichberger</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marinna Heichberger • Portfolio</title>
+  <meta name="description" content="Electrical Engineering student — digital systems, DSP, embedded & FPGA. Projects, resume, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1020;          /* deep indigo */
+      --panel: #17182e;       /* card background */
+      --ink: #e9ecff;         /* text */
+      --muted: #b8c0ff;       /* secondary text */
+      --accent: #c7a6ff;      /* lavender */
+      --accent-2: #7bd9ff;    /* soft blue */
+      --stroke: #2a2b53;      /* borders */
+      --radius-xl: 22px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 15% -10%,rgba(199,166,255,.18),transparent 60%),
+                                     radial-gradient(900px 500px at 90% 10%,rgba(123,217,255,.12),transparent 60%),
+                                     var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0 8px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{height:44px;width:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow)}
+    .name{font-weight:800;letter-spacing:.2px}
+    nav a{padding:10px 14px;border-radius:12px;color:var(--muted)}
+    nav a:hover{background:rgba(200,200,255,.08);color:var(--ink)}
+
+    .hero{margin-top:28px;padding:38px;background:linear-gradient(160deg,rgba(199,166,255,.14),rgba(123,217,255,.10));
+          border:1px solid var(--stroke);border-radius:var(--radius-xl);box-shadow:var(--shadow)}
+    .hero h1{font-family:"Playfair Display",serif;font-size:clamp(28px,5vw,44px);line-height:1.12;margin:0 0 10px}
+    .hero p{color:var(--muted);font-size:clamp(14px,2.2vw,17px);margin:0 0 18px}
+    .pillbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .pill{border:1px solid var(--stroke);color:var(--muted);padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.03)}
+
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{padding:11px 16px;border-radius:14px;border:1px solid var(--stroke);background:var(--panel);box-shadow:var(--shadow);font-weight:600}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0b17;border:none}
+    .btn:hover{filter:brightness(1.08)}
+
+    section{margin-top:42px}
+    h2{font-size:22px;margin:0 0 14px}
+
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:var(--radius-xl);padding:18px;box-shadow:var(--shadow)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:14px;border:1px solid var(--stroke);background:#0a0b18}
+    .card h3{margin:12px 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{font-size:12px;color:var(--muted);border:1px dashed var(--stroke);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.02)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+
+    footer{margin:46px 0 18px;color:var(--muted);text-align:center;font-size:13px}
+    .socials{display:flex;gap:10px;justify-content:center;margin-top:10px}
+    .iconbtn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--stroke);background:rgba(255,255,255,.03)}
+
+    /* Responsive tweaks */
+    @media (max-width:640px){ nav{display:none} .hero{padding:26px} }
+  </style>
 </head>
 <body>
-  <h1>Hello, welcome to my site!</h1>
-  <p>This is my first GitHub Pages website 🎉</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"></div>
+        <div class="name">Marinna Heichberger</div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" target="_blank">Résumé</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Electrical Engineering @ RIT</h1>
+      <p>Focused on digital design, signal processing, and applying data/ML tools to engineering problems.</p>
+      <div class="pillbar">
+        <span class="pill">Verilog • Quartus • ModelSim</span>
+        <span class="pill">C/C++ • Python • MATLAB</span>
+        <span class="pill">NumPy • scikit-learn</span>
+        <span class="pill">Fourier • Filters • Spectral analysis</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="resume.pdf" target="_blank">View Résumé (PDF)</a>
+        <a class="btn" href="#projects">See Projects</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <!-- Project Card: Wine Recommender -->
+        <article class="card">
+          <img src="assets/img/wine.jpg" alt="Wine recommender visualization" />
+          <h3>Wine Recommender</h3>
+          <p><em>Placeholder — expanding soon.</em></p>
+        </article>
+        
+        <!-- Project Card: eNose (Electronic Nose) -->
+        <article class="card">
+          <img src="assets/img/enose.jpg" alt="Electronic nose sensor array" />
+          <h3>Electronic Nose (eNose)</h3>
+          <p><em>Placeholder — expanding soon.</em></p>
+        </article>
+        
+        <!-- Project Card: TBD #1 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Project placeholder" />
+          <h3>Personal Project — Coming Soon</h3>
+          <p><em>Placeholder — expanding soon.</em></p>
+        </article>
+
+        <!-- Project Card: TBD #2 -->
+        <article class="card">
+          <img src="assets/img/placeholder.jpg" alt="Project placeholder" />
+          <h3>Personal Project — Coming Soon</h3>
+          <p><em>Placeholder — expanding soon.</em></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="tag">Verilog • Quartus • ModelSim</span>
+        <span class="tag">C • C++ • Python • MATLAB</span>
+        <span class="tag">NumPy • scikit-learn</span>
+        <span class="tag">Fourier • Convolution • FIR/IIR</span>
+        <span class="tag">MATLAB Image Processing Toolbox</span>
+        <span class="tag">LTSpice • Simulink</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="socials">
+        <a class="iconbtn" href="mailto:mrh4283@rit.edu">Email</a>
+        <a class="iconbtn" href="https://github.com/mrheichberger" target="_blank" rel="noopener">GitHub</a>
+        <a class="iconbtn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Marinna Heichberger</div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
