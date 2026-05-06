@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EEG Flow State Research | Marinna Heichberger</title>
+  <meta name="description" content="Flow-state detection from EEG signals with domain adaptation, diagrams, and mathematical framework." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "dark" });
+  </script>
+  <style>
+    :root{--bg:#090c16;--bg2:#11162a;--ink:#eef1ff;--muted:#b8c2e5;--stroke:rgba(182,195,255,.24);--panel:rgba(17,22,42,.62);--shadow:0 16px 40px rgba(5,8,20,.52)}
+    *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:linear-gradient(155deg,var(--bg),var(--bg2))}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 40px}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:18px;margin:14px 0;box-shadow:var(--shadow)}
+    h1{font-size:clamp(1.7rem,4.5vw,2.6rem);margin:0 0 8px} h2{margin:0 0 10px;font-size:1.2rem}
+    p{color:var(--muted);line-height:1.6;margin:0 0 10px} a{color:#cfe5ff}
+    .links{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--stroke);border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.04);text-decoration:none;font-size:13px}
+    .eq{font-family:"Times New Roman",serif;color:#dce8ff;background:rgba(0,0,0,.22);padding:10px;border-radius:12px;border:1px solid var(--stroke);overflow:auto}
+    .mermaid{background:rgba(0,0,0,.2);border:1px solid var(--stroke);border-radius:12px;padding:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Flow State Detection from EEG Signals</h1>
+      <p>In-progress graduate research on robust EEG cognitive-state classification with domain adaptation under noisy temporal signal conditions.</p>
+      <div class="links">
+        <a class="btn" href="../index.html#projects">Back to Portfolio</a>
+        <!-- TODO: replace placeholder when paper is finalized -->
+        <a class="btn" href="../assets/papers/eeg_flow_state_paper.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        <!-- TODO: replace placeholder with your actual diagram bundle -->
+        <a class="btn" href="../assets/diagrams/eeg-flow-mermaid.md" target="_blank" rel="noopener">Mermaid Diagrams</a>
+        <!-- TODO: replace placeholder with your actual equations notes -->
+        <a class="btn" href="../assets/notes/eeg-flow-math-equations.pdf" target="_blank" rel="noopener">Math Equations Notes</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Pipeline Diagram</h2>
+      <div class="mermaid">
+        graph LR
+          A[Raw EEG] --> B[Preprocessing and Artifact Handling]
+          B --> C[Feature Extraction: Bandpower / Temporal Windows / TDA]
+          C --> D[CNN-GRU Temporal Model]
+          D --> E[Domain Adaptation Layer]
+          E --> F[Flow or Drowsy or Attention Classification]
+          F --> G[LOSO Evaluation and Confusion Analysis]
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Core Equations (Working Set)</h2>
+      <p>These are representative forms used to communicate and iterate the modeling framework.</p>
+      <div class="eq">L_{task} = - \sum_i y_i \log \hat{y}_i</div>
+      <div class="eq">L_{DA} = ||\mu_s - \mu_t||_2^2</div>
+      <div class="eq">L_{total} = L_{task} + \lambda L_{DA} + \beta ||\theta||_2^2</div>
+      <div class="eq">Score_{flow}(t) = f_{\theta}(X_{t-w:t})</div>
+    </div>
+  </div>
+</body>
+</html>

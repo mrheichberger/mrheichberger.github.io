@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pattern Recognition Library | Marinna Heichberger</title>
+  <meta name="description" content="From-scratch pattern recognition algorithm library with mathematical derivations and implementation notes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#090c16;--bg2:#11162a;--ink:#eef1ff;--muted:#b8c2e5;--stroke:rgba(182,195,255,.24);--panel:rgba(17,22,42,.62);--shadow:0 16px 40px rgba(5,8,20,.52)}
+    *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:linear-gradient(155deg,var(--bg),var(--bg2))}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 40px}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:18px;margin:14px 0;box-shadow:var(--shadow)}
+    h1{font-size:clamp(1.7rem,4.5vw,2.6rem);margin:0 0 8px} h2{margin:0 0 10px;font-size:1.2rem}
+    p{color:var(--muted);line-height:1.6;margin:0 0 10px} a{color:#cfe5ff}
+    .links{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--stroke);border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.04);text-decoration:none;font-size:13px}
+    .eq{font-family:"Times New Roman",serif;color:#dce8ff;background:rgba(0,0,0,.22);padding:10px;border-radius:12px;border:1px solid var(--stroke);overflow:auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Pattern Recognition Algorithm Library</h1>
+      <p>In-progress research-prep library implementing core statistical learning and signal-estimation algorithms from scratch with derivations, code, and tests.</p>
+      <div class="links">
+        <a class="btn" href="../index.html#projects">Back to Portfolio</a>
+        <a class="btn" href="https://github.com/mrheichberger/algorithm-practice" target="_blank" rel="noopener">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Mathematical Derivations (Planned + Active)</h2>
+      <p>Each block below captures the primary objective and core equation used to derive implementation updates.</p>
+      <div class="grid">
+        <div><h2>LMS</h2><div class="eq">w_{t+1} = w_t + \mu e_t x_t</div></div>
+        <div><h2>Perceptron</h2><div class="eq">w_{t+1} = w_t + \eta y_t x_t, if y_t(w_t^T x_t) \le 0</div></div>
+        <div><h2>Fisher LDA</h2><div class="eq">w^* = S_w^{-1}(\mu_1 - \mu_2)</div></div>
+        <div><h2>Bayesian Classifier</h2><div class="eq">\hat{y} = argmax_k p(x|C_k)P(C_k)</div></div>
+        <div><h2>PCA</h2><div class="eq">\max_{||u||=1} u^T \Sigma u</div></div>
+        <div><h2>SVM</h2><div class="eq">\min_{w,b,\xi} \frac{1}{2}||w||^2 + C\sum_i \xi_i</div></div>
+        <div><h2>K-Means</h2><div class="eq">\min_{\{c_j\}} \sum_i ||x_i - c_{z_i}||^2</div></div>
+        <div><h2>GMM / EM</h2><div class="eq">Q(\theta,\theta^{old}) = E_{Z|X,\theta^{old}}[\log p(X,Z|\theta)]</div></div>
+        <div><h2>HMM</h2><div class="eq">P(X_{1:T}, Z_{1:T}) = P(Z_1)\prod_t P(Z_t|Z_{t-1})P(X_t|Z_t)</div></div>
+        <div><h2>Kalman Filter</h2><div class="eq">K_k = P^-_k H^T (H P^-_k H^T + R)^{-1}</div></div>
+        <div><h2>Wiener Filter</h2><div class="eq">W(\omega)=\frac{S_{xd}(\omega)}{S_{xx}(\omega)}</div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
