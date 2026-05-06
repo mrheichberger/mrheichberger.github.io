@@ -12,6 +12,13 @@
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
     mermaid.initialize({ startOnLoad: true, theme: "dark" });
   </script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
     :root{--bg:#090c16;--bg2:#11162a;--ink:#eef1ff;--muted:#b8c2e5;--stroke:rgba(182,195,255,.24);--panel:rgba(17,22,42,.62);--shadow:0 16px 40px rgba(5,8,20,.52)}
     *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:linear-gradient(155deg,var(--bg),var(--bg2))}
@@ -63,17 +70,17 @@
       <h2>Mathematical Derivations (Planned + Active)</h2>
       <p>Each block below captures the primary objective and core equation used to derive implementation updates.</p>
       <div class="grid">
-        <div><h2>LMS</h2><div class="eq">w_{t+1} = w_t + \mu e_t x_t</div></div>
-        <div><h2>Perceptron</h2><div class="eq">w_{t+1} = w_t + \eta y_t x_t, if y_t(w_t^T x_t) \le 0</div></div>
-        <div><h2>Fisher LDA</h2><div class="eq">w^* = S_w^{-1}(\mu_1 - \mu_2)</div></div>
-        <div><h2>Bayesian Classifier</h2><div class="eq">\hat{y} = argmax_k p(x|C_k)P(C_k)</div></div>
-        <div><h2>PCA</h2><div class="eq">\max_{||u||=1} u^T \Sigma u</div></div>
-        <div><h2>SVM</h2><div class="eq">\min_{w,b,\xi} \frac{1}{2}||w||^2 + C\sum_i \xi_i</div></div>
-        <div><h2>K-Means</h2><div class="eq">\min_{\{c_j\}} \sum_i ||x_i - c_{z_i}||^2</div></div>
-        <div><h2>GMM / EM</h2><div class="eq">Q(\theta,\theta^{old}) = E_{Z|X,\theta^{old}}[\log p(X,Z|\theta)]</div></div>
-        <div><h2>HMM</h2><div class="eq">P(X_{1:T}, Z_{1:T}) = P(Z_1)\prod_t P(Z_t|Z_{t-1})P(X_t|Z_t)</div></div>
-        <div><h2>Kalman Filter</h2><div class="eq">K_k = P^-_k H^T (H P^-_k H^T + R)^{-1}</div></div>
-        <div><h2>Wiener Filter</h2><div class="eq">W(\omega)=\frac{S_{xd}(\omega)}{S_{xx}(\omega)}</div></div>
+        <div><h2>LMS</h2><div class="eq">\( w_{t+1} = w_t + \mu e_t x_t \)</div></div>
+        <div><h2>Perceptron</h2><div class="eq">\( w_{t+1} = w_t + \eta y_t x_t,\ \text{if}\ y_t(w_t^\top x_t)\le0 \)</div></div>
+        <div><h2>Fisher LDA</h2><div class="eq">\( w^\* = S_w^{-1}(\mu_1-\mu_2) \)</div></div>
+        <div><h2>Bayesian Classifier</h2><div class="eq">\( \hat{y}=\arg\max_k\ p(x\mid C_k)P(C_k) \)</div></div>
+        <div><h2>PCA</h2><div class="eq">\( \max_{\lVert u\rVert=1}\ u^\top\Sigma u \)</div></div>
+        <div><h2>SVM</h2><div class="eq">\( \min_{w,b,\xi}\ \frac{1}{2}\lVert w\rVert^2 + C\sum_i \xi_i \)</div></div>
+        <div><h2>K-Means</h2><div class="eq">\( \min_{\{c_j\}}\ \sum_i \lVert x_i-c_{z_i}\rVert^2 \)</div></div>
+        <div><h2>GMM / EM</h2><div class="eq">\( Q(\theta,\theta^{old})=\mathbb{E}_{Z\mid X,\theta^{old}}[\log p(X,Z\mid\theta)] \)</div></div>
+        <div><h2>HMM</h2><div class="eq">\( P(X_{1:T},Z_{1:T})=P(Z_1)\prod_t P(Z_t\mid Z_{t-1})P(X_t\mid Z_t) \)</div></div>
+        <div><h2>Kalman Filter</h2><div class="eq">\( K_k=P_k^-H^\top(HP_k^-H^\top+R)^{-1} \)</div></div>
+        <div><h2>Wiener Filter</h2><div class="eq">\( W(\omega)=\frac{S_{xd}(\omega)}{S_{xx}(\omega)} \)</div></div>
       </div>
     </div>
   </div>
