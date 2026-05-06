@@ -16,7 +16,7 @@
     :root{--bg:#090c16;--bg2:#11162a;--ink:#eef1ff;--muted:#b8c2e5;--stroke:rgba(182,195,255,.24);--panel:rgba(17,22,42,.62);--shadow:0 16px 40px rgba(5,8,20,.52)}
     *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:linear-gradient(155deg,var(--bg),var(--bg2))}
     body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(135,160,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(135,160,255,.08) 1px, transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at center, black 40%, transparent 100%);opacity:.2;z-index:-1}
-    .star-canvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.8}
+    body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.42;background-image:radial-gradient(circle, rgba(238,246,255,.92) 0 .9px, transparent 1.1px),radial-gradient(circle, rgba(202,219,255,.8) 0 .9px, transparent 1.1px);background-size:150px 150px,220px 220px;background-position:14px 28px,80px 110px}
     .neon-swirl{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.75}
     .neon-swirl .sw{position:absolute;border-radius:999px;border:2px solid rgba(184,142,255,.8);box-shadow:0 0 14px rgba(171,120,255,.9),0 0 30px rgba(139,209,255,.55);mix-blend-mode:screen}
     .neon-swirl .a{width:48vw;height:15vw;min-width:420px;min-height:130px;left:10vw;top:10vh;transform:rotate(-10deg)}
@@ -35,7 +35,6 @@
 </head>
 <body>
   <div class="neon-swirl" aria-hidden="true"><span class="sw a"></span><span class="sw b"></span><span class="sw c"></span><span class="sw d"></span></div>
-  <canvas id="star-canvas" class="star-canvas" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="card">
       <h1>Pattern Recognition Algorithm Library</h1>
@@ -78,8 +77,5 @@
       </div>
     </div>
   </div>
-  <script>
-    (function(){const c=document.getElementById("star-canvas");const x=c.getContext("2d");if(!x)return;function r(){const d=Math.min(window.devicePixelRatio||1,2),w=innerWidth,h=innerHeight;c.width=w*d;c.height=h*d;c.style.width=w+"px";c.style.height=h+"px";x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,w,h);for(let i=0;i<55;i++){const sx=Math.random()*w,sy=Math.random()*h,s=1+Math.random()*1.8,g=s*4.5;x.save();x.translate(sx,sy);x.globalAlpha=.28+Math.random()*.56;x.shadowBlur=g;x.shadowColor="rgba(200,220,255,.95)";x.strokeStyle="rgba(238,246,255,.95)";x.lineWidth=Math.max(.8,s*.2);x.beginPath();x.moveTo(-s,0);x.lineTo(s,0);x.moveTo(0,-s);x.lineTo(0,s);x.stroke();x.restore();}}window.addEventListener("resize",r);r();})();
-  </script>
 </body>
 </html>
