@@ -1,0 +1,21 @@
+# --- Private planning / productivity systems ---
+private/
+planning/
+dashboards/
+notes/
+roadmap/
+
+# --- Spreadsheet and data exports (private by default) ---
+*.xlsx
+*.xls
+*.csv
+*.tsv
+
+# --- Optional private doc exports ---
+*.numbers
+*.ods
+
+# --- Local scratch / journal notes ---
+*-notes.md
+*-plan.md
+*-roadmap.md
