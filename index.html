@@ -140,6 +140,25 @@
       position:relative;
       overflow:hidden;
     }
+    .hero .light-sweep{
+      position:absolute;
+      top:-30%;
+      left:-60%;
+      width:48%;
+      height:180%;
+      transform:rotate(18deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
+      filter:blur(2px);
+      pointer-events:none;
+      animation:heroSweep 9s ease-in-out infinite;
+      z-index:0;
+    }
+    @keyframes heroSweep{
+      0%, 100%{left:-65%; opacity:0}
+      12%{opacity:.22}
+      50%{left:130%; opacity:.12}
+      62%{opacity:0}
+    }
     .hero::after{
       content:"";
       position:absolute;
@@ -433,6 +452,7 @@
     </header>
 
     <section class="hero glass" id="home">
+      <div class="light-sweep" aria-hidden="true"></div>
       <span class="eyebrow">Electrical Engineering Graduate Researcher</span>
       <h1>Machine learning, signal processing, and embedded systems for noisy real-world data.</h1>
       <p>Electrical engineering graduate student focused on machine learning, pattern recognition, stochastic signal processing, EEG/BCI research, DSP, and robust modeling of noisy temporal signals.</p>
