@@ -12,13 +12,6 @@
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
     mermaid.initialize({ startOnLoad: true, theme: "dark" });
   </script>
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
     :root{--bg:#090c16;--bg2:#11162a;--ink:#eef1ff;--muted:#b8c2e5;--stroke:rgba(182,195,255,.24);--panel:rgba(17,22,42,.62);--shadow:0 16px 40px rgba(5,8,20,.52)}
     *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:linear-gradient(155deg,var(--bg),var(--bg2))}
@@ -29,6 +22,7 @@
     .neon-swirl .a{width:48vw;height:15vw;min-width:420px;min-height:130px;left:10vw;top:10vh;transform:rotate(-10deg)}
     .neon-swirl .b{width:48vw;height:15vw;min-width:420px;min-height:130px;left:12vw;top:12vh;border-color:rgba(130,224,255,.82);transform:rotate(-6deg);opacity:.8}
     .neon-swirl .c{width:15vw;height:15vw;min-width:140px;min-height:140px;right:8vw;top:16vh;opacity:.68}
+    .neon-swirl .d{width:28vw;height:10vw;min-width:260px;min-height:90px;left:36vw;bottom:6vh;border-color:rgba(246,150,236,.74);transform:rotate(8deg);opacity:.62}
     .wrap{max-width:980px;margin:0 auto;padding:28px 18px 40px;position:relative;z-index:1}
     .card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:18px;margin:14px 0;box-shadow:var(--shadow)}
     h1{font-size:clamp(1.7rem,4.5vw,2.6rem);margin:0 0 8px} h2{margin:0 0 10px;font-size:1.2rem}
@@ -40,7 +34,7 @@
   </style>
 </head>
 <body>
-  <div class="neon-swirl" aria-hidden="true"><span class="sw a"></span><span class="sw b"></span><span class="sw c"></span></div>
+  <div class="neon-swirl" aria-hidden="true"><span class="sw a"></span><span class="sw b"></span><span class="sw c"></span><span class="sw d"></span></div>
   <canvas id="star-canvas" class="star-canvas" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="card">
@@ -70,17 +64,17 @@
       <h2>Mathematical Derivations (Planned + Active)</h2>
       <p>Each block below captures the primary objective and core equation used to derive implementation updates.</p>
       <div class="grid">
-        <div><h2>LMS</h2><div class="eq">\( w_{t+1} = w_t + \mu e_t x_t \)</div></div>
-        <div><h2>Perceptron</h2><div class="eq">\( w_{t+1} = w_t + \eta y_t x_t,\ \text{if}\ y_t(w_t^\top x_t)\le0 \)</div></div>
-        <div><h2>Fisher LDA</h2><div class="eq">\( w^\* = S_w^{-1}(\mu_1-\mu_2) \)</div></div>
-        <div><h2>Bayesian Classifier</h2><div class="eq">\( \hat{y}=\arg\max_k\ p(x\mid C_k)P(C_k) \)</div></div>
-        <div><h2>PCA</h2><div class="eq">\( \max_{\lVert u\rVert=1}\ u^\top\Sigma u \)</div></div>
-        <div><h2>SVM</h2><div class="eq">\( \min_{w,b,\xi}\ \frac{1}{2}\lVert w\rVert^2 + C\sum_i \xi_i \)</div></div>
-        <div><h2>K-Means</h2><div class="eq">\( \min_{\{c_j\}}\ \sum_i \lVert x_i-c_{z_i}\rVert^2 \)</div></div>
-        <div><h2>GMM / EM</h2><div class="eq">\( Q(\theta,\theta^{old})=\mathbb{E}_{Z\mid X,\theta^{old}}[\log p(X,Z\mid\theta)] \)</div></div>
-        <div><h2>HMM</h2><div class="eq">\( P(X_{1:T},Z_{1:T})=P(Z_1)\prod_t P(Z_t\mid Z_{t-1})P(X_t\mid Z_t) \)</div></div>
-        <div><h2>Kalman Filter</h2><div class="eq">\( K_k=P_k^-H^\top(HP_k^-H^\top+R)^{-1} \)</div></div>
-        <div><h2>Wiener Filter</h2><div class="eq">\( W(\omega)=\frac{S_{xd}(\omega)}{S_{xx}(\omega)} \)</div></div>
+        <div><h2>LMS</h2><div class="eq">w<sub>t+1</sub> = w<sub>t</sub> + &mu;e<sub>t</sub>x<sub>t</sub></div></div>
+        <div><h2>Perceptron</h2><div class="eq">w<sub>t+1</sub> = w<sub>t</sub> + &eta;y<sub>t</sub>x<sub>t</sub>, if y<sub>t</sub>(w<sub>t</sub><sup>T</sup>x<sub>t</sub>) &le; 0</div></div>
+        <div><h2>Fisher LDA</h2><div class="eq">w* = S<sub>w</sub><sup>-1</sup>(&mu;<sub>1</sub> - &mu;<sub>2</sub>)</div></div>
+        <div><h2>Bayesian Classifier</h2><div class="eq">y&#770; = argmax<sub>k</sub> p(x | C<sub>k</sub>)P(C<sub>k</sub>)</div></div>
+        <div><h2>PCA</h2><div class="eq">max<sub>||u||=1</sub> u<sup>T</sup>&Sigma;u</div></div>
+        <div><h2>SVM</h2><div class="eq">min<sub>w,b,&xi;</sub> (1/2)||w||<sup>2</sup> + C&sum;<sub>i</sub>&xi;<sub>i</sub></div></div>
+        <div><h2>K-Means</h2><div class="eq">min<sub>{c<sub>j</sub>}</sub> &sum;<sub>i</sub> ||x<sub>i</sub> - c<sub>z<sub>i</sub></sub>||<sup>2</sup></div></div>
+        <div><h2>GMM / EM</h2><div class="eq">Q(&theta;,&theta;<sup>old</sup>) = E<sub>Z|X,&theta;<sup>old</sup></sub>[log p(X,Z|&theta;)]</div></div>
+        <div><h2>HMM</h2><div class="eq">P(X<sub>1:T</sub>,Z<sub>1:T</sub>) = P(Z<sub>1</sub>) &prod;<sub>t</sub> P(Z<sub>t</sub>|Z<sub>t-1</sub>)P(X<sub>t</sub>|Z<sub>t</sub>)</div></div>
+        <div><h2>Kalman Filter</h2><div class="eq">K<sub>k</sub> = P<sub>k</sub><sup>-</sup>H<sup>T</sup>(HP<sub>k</sub><sup>-</sup>H<sup>T</sup> + R)<sup>-1</sup></div></div>
+        <div><h2>Wiener Filter</h2><div class="eq">W(&omega;) = S<sub>xd</sub>(&omega;) / S<sub>xx</sub>(&omega;)</div></div>
       </div>
     </div>
   </div>
