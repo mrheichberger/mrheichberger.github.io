@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MSD Data Sonification Windchime | Marinna Heichberger</title>
+  <meta name="description" content="Embedded windchime sonification system with Raspberry Pi and Pico motor-control architecture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "dark" });
+  </script>
+  <style>
+    :root{--bg:#090c16;--bg2:#11162a;--ink:#eef1ff;--muted:#b8c2e5;--stroke:rgba(182,195,255,.24);--panel:rgba(17,22,42,.62);--shadow:0 16px 40px rgba(5,8,20,.52)}
+    *{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:linear-gradient(155deg,var(--bg),var(--bg2))}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 40px}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:18px;margin:14px 0;box-shadow:var(--shadow)}
+    h1{font-size:clamp(1.7rem,4.5vw,2.6rem);margin:0 0 8px} h2{margin:0 0 10px;font-size:1.2rem}
+    p{color:var(--muted);line-height:1.6;margin:0 0 10px} a{color:#cfe5ff}
+    .links{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--stroke);border-radius:999px;padding:8px 12px;background:rgba(255,255,255,.04);text-decoration:none;font-size:13px}
+    .mermaid{background:rgba(0,0,0,.2);border:1px solid var(--stroke);border-radius:12px;padding:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>MSD Data Sonification Windchime</h1>
+      <p>Senior design system that converts selected datasets or weather inputs into mechanical windchime control states using Pi/Pico integration and embedded motor coordination.</p>
+      <div class="links">
+        <a class="btn" href="../index.html#projects">Back to Portfolio</a>
+        <a class="btn" href="https://github.com/mrheichberger/msd-data-sonification-windchime" target="_blank" rel="noopener">GitHub Repository</a>
+        <a class="btn" href="../assets/papers/msd-windchime-paper-placeholder.md" target="_blank" rel="noopener">Paper (Placeholder)</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>System Flowchart</h2>
+      <div class="mermaid">
+        graph TD
+          A[User Input or Weather API] --> B[Python Backend]
+          B --> C[JSON State Builder]
+          C --> D[UART Command Packets]
+          D --> E[Raspberry Pi Pico]
+          E --> F[Motor Driver + DC Motors]
+          F --> G[Encoder Feedback]
+          G --> B
+          F --> H[Geneva Mechanism Motion]
+      </div>
+    </div>
+  </div>
+</body>
+</html>
