@@ -382,6 +382,20 @@
       transition:transform .22s ease,border-color .22s ease,background .22s ease;
     }
     .project-card{cursor:pointer}
+    .card-hit{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      border-radius:16px;
+    }
+    .card .tagrow,
+    .card .card-links,
+    .card h3,
+    .card p,
+    .card .status{
+      position:relative;
+      z-index:2;
+    }
     .card:hover{
       transform:translateY(-2px);
       border-color:rgba(189,163,255,.45);
@@ -576,6 +590,7 @@
         <h3 class="theme-title"><span class="theme-dot"></span>Featured Projects</h3>
         <div class="grid">
           <article class="card project-card" data-project-url="projects/msd-data-sonification-windchime.html">
+            <a class="card-hit" href="projects/msd-data-sonification-windchime.html" target="_blank" rel="noopener" aria-label="Open MSD Data Sonification Windchime project page"></a>
             <h3>MSD Data Sonification Windchime</h3>
             <p>Built an embedded mechatronic platform that maps user-selected or weather-driven inputs into mechanical windchime configurations using coordinated software and motor control.</p>
             <div class="tagrow">
@@ -591,6 +606,7 @@
           </article>
 
           <article class="card project-card" data-project-url="projects/pattern-recognition-library.html">
+            <a class="card-hit" href="projects/pattern-recognition-library.html" target="_blank" rel="noopener" aria-label="Open Pattern Recognition Algorithm Library project page"></a>
             <h3>Pattern Recognition Algorithm Library <span class="status">In Progress</span></h3>
             <p>Developing a from-scratch library for core statistical learning and signal-estimation algorithms with mathematical derivations, readable implementations, testing, and diagnostics.</p>
             <div class="tagrow">
@@ -607,6 +623,7 @@
           </article>
 
           <article class="card project-card" data-project-url="projects/eeg-flow-state-research.html">
+            <a class="card-hit" href="projects/eeg-flow-state-research.html" target="_blank" rel="noopener" aria-label="Open EEG Flow State project page"></a>
             <h3>Flow State Detection from EEG Signals with Domain Adaptation <span class="status">In Progress</span></h3>
             <p>Graduate research on cognitive-state modeling from noisy temporal EEG, emphasizing cross-subject robustness, domain adaptation, and rigorous evaluation design.</p>
             <div class="tagrow">
@@ -789,24 +806,6 @@
       init();
     })();
 
-    (function () {
-      const cards = document.querySelectorAll(".project-card[data-project-url]");
-      cards.forEach((card) => {
-        card.addEventListener("click", (event) => {
-          if (event.target.closest("a")) return;
-          const url = card.getAttribute("data-project-url");
-          if (url) window.open(url, "_blank", "noopener");
-        });
-        card.addEventListener("keydown", (event) => {
-          if (event.key !== "Enter" && event.key !== " ") return;
-          event.preventDefault();
-          const url = card.getAttribute("data-project-url");
-          if (url) window.open(url, "_blank", "noopener");
-        });
-        card.setAttribute("role", "link");
-        card.setAttribute("tabindex", "0");
-      });
-    })();
   </script>
 </body>
 </html>
